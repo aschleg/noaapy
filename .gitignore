@@ -1,0 +1,9 @@
+$ cat .gitignore
+
+dist/
+venv/
+notebooks/
+*.pyc
+.idea
+.cache
+petpy.egg*
