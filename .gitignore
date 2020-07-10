@@ -1,8 +1,10 @@
 $ cat .gitignore
 
+build/
 dist/
 venv/
 notebooks/
+*.egg-info/
 *.pyc
 .idea
 .cache

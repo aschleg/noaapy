@@ -7,7 +7,7 @@ setup(
     version='0.5.0',
     author='Aaron Schlegel',
     author_email='aaron@aaronschlegel.me',
-    url='https://github.com/aschleg/petpy',
+    url='https://github.com/aschleg/noaapy',
     description='Wrapper for the National Centers for Environmental Information API',
     license='MIT',
     packages=find_packages(exclude=['build', 'dist', 'petpy.egg-info',
