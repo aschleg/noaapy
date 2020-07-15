@@ -11,8 +11,17 @@ class NOAA(object):
         }
         self._host = 'https://www.ncdc.noaa.gov/cdo-web/api/v2/'
 
-    def datasets(self, dataset_id=None, data_type_id=None, location_id=None, station_id=None, start_date=None,
-                 end_date=None, sort_field=None, sort_order='asc', limit=25, offset=0):
+    def datasets(self,
+                 dataset_id=None,
+                 data_type_id=None,
+                 location_id=None,
+                 station_id=None,
+                 start_date=None,
+                 end_date=None,
+                 sort_field=None,
+                 sort_order='asc',
+                 limit=25,
+                 offset=0):
 
         endpoint = 'datasets'
 
@@ -20,14 +29,30 @@ class NOAA(object):
             endpoint = endpoint + '/{dataset_id}'.format(dataset_id=
                                                          dataset_id)
 
-        r = self._call_api(endpoint=endpoint, data_type_id=data_type_id, location_id=location_id, station_id=station_id,
-                           start_date=start_date, end_date=end_date, sort_field=sort_field, sort_order=sort_order,
-                           limit=limit, offset=offset)
+        r = self._call_api(endpoint=endpoint,
+                           data_type_id=data_type_id,
+                           location_id=location_id,
+                           station_id=station_id,
+                           start_date=start_date,
+                           end_date=end_date,
+                           sort_field=sort_field,
+                           sort_order=sort_order,
+                           limit=limit,
+                           offset=offset)
 
         return r
 
-    def data_categories(self, category_id=None, dataset_id=None, location_id=None, station_id=None,
-                        start_date=None, end_date=None, sort_field=None, sort_order='asc', limit=25, offset=0):
+    def data_categories(self,
+                        category_id=None,
+                        dataset_id=None,
+                        location_id=None,
+                        station_id=None,
+                        start_date=None,
+                        end_date=None,
+                        sort_field=None,
+                        sort_order='asc',
+                        limit=25,
+                        offset=0):
 
         endpoint = 'datacategories'
 
@@ -35,14 +60,31 @@ class NOAA(object):
             endpoint = endpoint + '/{category_id}'.format(category_id=
                                                           category_id)
 
-        r = self._call_api(endpoint=endpoint, dataset_id=dataset_id, location_id=location_id, station_id=station_id,
-                           start_date=start_date, end_date=end_date, sort_field=sort_field, sort_order=sort_order,
-                           limit=limit, offset=offset)
+        r = self._call_api(endpoint=endpoint,
+                           dataset_id=dataset_id,
+                           location_id=location_id,
+                           station_id=station_id,
+                           start_date=start_date,
+                           end_date=end_date,
+                           sort_field=sort_field,
+                           sort_order=sort_order,
+                           limit=limit,
+                           offset=offset)
 
         return r
 
-    def data_types(self, type_id=None, dataset_id=None, location_id=None, station_id=None, category_id=None,
-                   start_date=None, end_date=None, sort_field=None, sort_order='asc', limit=25, offset=0):
+    def data_types(self,
+                   type_id=None,
+                   dataset_id=None,
+                   location_id=None,
+                   station_id=None,
+                   category_id=None,
+                   start_date=None,
+                   end_date=None,
+                   sort_field=None,
+                   sort_order='asc',
+                   limit=25,
+                   offset=0):
 
         endpoint = 'datatypes'
 
@@ -50,14 +92,28 @@ class NOAA(object):
             endpoint = endpoint + '/{type_id}'.format(type_id=
                                                       type_id)
 
-        r = self._call_api(endpoint=endpoint, dataset_id=dataset_id, location_id=location_id, station_id=station_id,
-                           start_date=start_date, end_date=end_date, sort_field=sort_field, sort_order=sort_order,
-                           limit=limit, offset=offset)
+        r = self._call_api(endpoint=endpoint,
+                           dataset_id=dataset_id,
+                           location_id=location_id,
+                           station_id=station_id,
+                           start_date=start_date,
+                           end_date=end_date,
+                           sort_field=sort_field,
+                           sort_order=sort_order,
+                           limit=limit,
+                           offset=offset)
 
         return r
 
-    def location_categories(self, category_id=None, dataset_id=None, start_date=None, end_date=None,
-                            sort_field=None, sort_order='asc', limit=25, offset=0):
+    def location_categories(self,
+                            category_id=None,
+                            dataset_id=None,
+                            start_date=None,
+                            end_date=None,
+                            sort_field=None,
+                            sort_order='asc',
+                            limit=25,
+                            offset=0):
 
         endpoint = 'locationcategories'
 
@@ -65,13 +121,29 @@ class NOAA(object):
             endpoint = endpoint + '/{category_id}'.format(category_id=
                                                           category_id)
 
-        r = self._call_api(endpoint=endpoint, dataset_id=dataset_id, start_date=start_date, end_date=end_date,
-                           sort_field=sort_field, sort_order=sort_order, limit=limit, offset=offset)
+        r = self._call_api(endpoint=endpoint,
+                           dataset_id=dataset_id,
+                           start_date=start_date,
+                           end_date=end_date,
+                           sort_field=sort_field,
+                           sort_order=sort_order,
+                           limit=limit,
+                           offset=offset)
 
         return r
 
-    def locations(self, location_id=None, dataset_id=None, location_category_id=None, data_category_id=None,
-                  start_date=None, end_date=None, sort_field=None, sort_order='asc', limit=25, offset=0):
+    def locations(self,
+                  location_id=None,
+                  dataset_id=None,
+                  location_category_id=None,
+                  data_category_id=None,
+                  start_date=None,
+                  end_date=None,
+                  sort_field=None,
+                  sort_order='asc',
+                  limit=25,
+                  pages=0,
+                  offset=0):
 
         endpoint = 'locations'
 
@@ -79,14 +151,33 @@ class NOAA(object):
             endpoint = endpoint + '/{location_id}'.format(location_id=
                                                           location_id)
 
-        r = self._call_api(endpoint=endpoint, dataset_id=dataset_id, start_date=start_date, end_date=end_date,
-                           location_category_id=location_category_id, data_category_id=data_category_id,
-                           sort_field=sort_field, sort_order=sort_order, limit=limit, offset=offset)
+        r = self._call_api(endpoint=endpoint,
+                           dataset_id=dataset_id,
+                           start_date=start_date,
+                           end_date=end_date,
+                           location_category_id=location_category_id,
+                           data_category_id=data_category_id,
+                           sort_field=sort_field,
+                           sort_order=sort_order,
+                           limit=limit,
+                           offset=offset)
 
         return r
 
-    def stations(self, station_id=None, dataset_id=None, location_id=None, data_category_id=None, data_type_id=None,
-                 extent=None, start_date=None, end_date=None, sort_field=None, sort_order='asc', limit=25, offset=0):
+    def stations(self,
+                 station_id=None,
+                 dataset_id=None,
+                 location_id=None,
+                 data_category_id=None,
+                 data_type_id=None,
+                 extent=None,
+                 start_date=None,
+                 end_date=None,
+                 sort_field=None,
+                 sort_order='asc',
+                 limit=25,
+                 pages=None,
+                 offset=0):
 
         endpoint = 'stations'
 
@@ -94,27 +185,73 @@ class NOAA(object):
             endpoint = endpoint + '/{station_id}'.format(station_id=
                                                          station_id)
 
-        r = self._call_api(endpoint=endpoint, dataset_id=dataset_id, start_date=start_date, end_date=end_date,
-                           location_id=location_id, data_category_id=data_category_id, data_type_id=data_type_id, extent=extent,
-                           sort_field=sort_field, sort_order=sort_order, limit=limit, offset=offset)
+        #if pages is not None:
+        #    for i in range(0, pages + 1):
+
+        r = self._call_api(endpoint=endpoint,
+                           dataset_id=dataset_id,
+                           start_date=start_date,
+                           end_date=end_date,
+                           location_id=location_id,
+                           data_category_id=data_category_id,
+                           data_type_id=data_type_id,
+                           extent=extent,
+                           sort_field=sort_field,
+                           sort_order=sort_order,
+                           limit=limit,
+                           offset=offset)
 
         return r
 
-    def get_data(self, dataset_id, data_type_id=None, location_id=None, station_id=None, start_date=None, end_date=None,
-                 units='metric', sort_field=None, sort_order='asc', limit=25, offset=0, include_metadata=True):
+    def get_data(self,
+                 dataset_id,
+                 data_type_id=None,
+                 location_id=None,
+                 station_id=None,
+                 start_date=None,
+                 end_date=None,
+                 units='metric',
+                 sort_field=None,
+                 sort_order='asc',
+                 limit=25,
+                 pages=0,
+                 offset=0,
+                 include_metadata=True):
 
         endpoint = 'data'
 
-        r = self._call_api(endpoint=endpoint, dataset_id=dataset_id, start_date=start_date, end_date=end_date,
-                           location_id=location_id, station_id=station_id, data_type_id=data_type_id, units=units,
-                           sort_field=sort_field, sort_order=sort_order, limit=limit, offset=offset,
+        r = self._call_api(endpoint=endpoint,
+                           dataset_id=dataset_id,
+                           start_date=start_date,
+                           end_date=end_date,
+                           location_id=location_id,
+                           station_id=station_id,
+                           data_type_id=data_type_id,
+                           units=units,
+                           sort_field=sort_field,
+                           sort_order=sort_order,
+                           limit=limit,
+                           offset=offset,
                            include_metadata=include_metadata)
 
         return r
 
-    def _call_api(self, endpoint, dataset_id=None, data_type_id=None, location_id=None, station_id=None,
-                  location_category_id=None, data_category_id=None, start_date=None, end_date=None,
-                  sort_field=None, sort_order=None, limit=None, offset=None, units=None, extent=None,
+    def _call_api(self,
+                  endpoint,
+                  dataset_id=None,
+                  data_type_id=None,
+                  location_id=None,
+                  station_id=None,
+                  location_category_id=None,
+                  data_category_id=None,
+                  start_date=None,
+                  end_date=None,
+                  sort_field=None,
+                  sort_order=None,
+                  limit=None,
+                  offset=None,
+                  units=None,
+                  extent=None,
                   include_metadata=None):
 
         data = {
@@ -138,7 +275,7 @@ class NOAA(object):
         data = {key: val for key, val in data.items() if val is not None}
 
         r = requests.get(urljoin(self._host, endpoint),
-                         data=data,
+                         params=data,
                          headers=self._api_header)
 
         return r.json()
